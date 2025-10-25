@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: codearena-backend
+    ports:
+      - "8080:8080"
+    depends_on: []
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: codearena-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
