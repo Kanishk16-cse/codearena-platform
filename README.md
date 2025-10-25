@@ -1,7 +1,4 @@
-# Overview
-
-CodeArena Platform is a full-stack web application designed to host and manage programming challenges in a secure, scalable, and user-friendly environment.
-It enables users to write, compile, and execute code online — similar to competitive programming platforms such as LeetCode or Codeforces — using an isolated Docker-based execution environment.
+# About Project
 
 ## This system is structured around three major components:
 
