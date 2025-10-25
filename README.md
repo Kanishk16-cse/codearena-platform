@@ -1,19 +1,45 @@
-# Codearena Platform
+# Overview
 
-## About the project 
-CodeArena Platform is a web-based coding competition and practice system that allows users to write, run, and submit code in a secure sandboxed environment. It provides a modern interface for solving programming problems and supports real-time evaluation through containerized code execution.
+CodeArena Platform is a full-stack web application designed to host and manage programming challenges in a secure, scalable, and user-friendly environment.
+It enables users to write, compile, and execute code online — similar to competitive programming platforms such as LeetCode or Codeforces — using an isolated Docker-based execution environment.
 
-## Features
-User-friendly frontend built with React and Tailwind CSS.
-Backend developed using Java (Spring Boot) for robust API management.
-Docker-based runner service for isolated and secure code execution.
-Supports container orchestration via Docker Compose for seamless deployment.
+## This system is structured around three major components:
 
-## Tech Stack
+Frontend – a modern, responsive web interface built with React and Tailwind CSS.
+Backend – a Spring Boot–based service providing APIs for authentication, problem management, and submission tracking.
+Runner Service – a secure code execution environment powered by Docker for sandboxed program evaluation.
 
-Frontend: React, Vite, Tailwind CSS
-Backend: Java (Spring Boot), Maven
-Runner: Docker
+# Architechture
++--------------------------+
+|        Frontend          |
+| (React, Tailwind, Vite)  |
+|--------------------------|
+| UI, Routing, Code Editor |
++-----------+--------------+
+            |
+            v
++-----------+--------------+
+|           Backend         |
+|   (Spring Boot, REST API) |
+|----------------------------|
+| Auth | Submissions | Problems |
++-----------+--------------+
+            |
+            v
++-----------+--------------+
+|        Runner Service     |
+|   (Docker Sandbox Env)    |
+| Executes & Validates Code |
++----------------------------+
+
+# Features 
+Features
+
+User Authentication – Secure login and registration with JWT-based authentication.
+Problem Management – Create, list, and update coding problems.
+Code Execution – Safely execute submitted code inside Docker containers.
+Submission Evaluation – Automatic result checking against predefined test cases.
+Modular Design – Independent frontend, backend, and runner services for scalability.
 
 ## How to run this project 
 Run backend: cd backend && mvn -B -DskipTests package && java -jar target/codearena-backend-0.0.1-SNAPSHOT.jar
